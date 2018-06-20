@@ -98,28 +98,37 @@ public class PhotoPost
      * (Currently: Print to the text terminal. This is simulating display 
      * in a web browser for now.)
      */
-    public void display()
+    public String display()
     {
-        System.out.println(username);
-        System.out.println("  [" + filename + "]");
-        System.out.println("  " + caption);
-        System.out.print(timeString(timestamp));
-        
+
+        String result = "";
+        result += username;
+        result += "\n";
+        result += "  [" + filename + "]";
+        result += "\n";
+        result += "  " + caption;
+        result += "\n";
+
+        result += timeString(timestamp);
         if(likes > 0) {
-            System.out.println("  -  " + likes + " people like this.");
+            result += "  -  " + likes + " people like this.";
+            result += "\n";
         }
         else {
-            System.out.println();
+            result += "\n";
         }
-        
+
         if(comments.isEmpty()) {
-            System.out.println("   No comments.");
+            result += "   No comments.";
+            result += "\n";
         }
         else {
-            System.out.println("   " + comments.size() + " comment(s). Click here to view.");
+            result += "   " + comments.size() + " comment(s). Click here to view.";
+            result += "\n";
         }
+        return result;
     }
-    
+
     /**
      * Create a string describing a time point in the past in terms 
      * relative to current time, such as "30 seconds ago" or "7 minutes ago".
@@ -128,7 +137,7 @@ public class PhotoPost
      * @param time  The time value to convert (in system milliseconds)
      * @return      A relative time string for the given time
      */
-    
+
     private String timeString(long time)
     {
         long current = System.currentTimeMillis();

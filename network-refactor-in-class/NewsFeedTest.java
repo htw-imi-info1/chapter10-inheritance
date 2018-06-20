@@ -15,6 +15,7 @@ public class NewsFeedTest
     private NewsFeed newsFeed1;
     MessagePost messagePost;
     PhotoPost photoPost ;
+    String feed ;
 
     /**
      * Default constructor for test class NewsFeedTest
@@ -33,17 +34,53 @@ public class NewsFeedTest
     {
         newsFeed1 = new NewsFeed();
         messagePost = new MessagePost("Känguru", "halt mal");
+        messagePost.like();
+        messagePost.like();
+        messagePost.addComment("message comment 1");
+        newsFeed1.addMessagePost(messagePost);
         photoPost = new PhotoPost("Känguru", "pfote.jpg", "Die Pfote");
+        photoPost.like();
+        photoPost.addComment("photo comment 1");
+        photoPost.addComment("photo comment 2");
+        newsFeed1.addPhotoPost(photoPost);
+        feed = newsFeed1.getFeed();
 
     }
 
     @Test
-    public void testCreateAndShow()
+    public void testMessage()
     {
-        newsFeed1.addMessagePost(messagePost);
-        newsFeed1.show();
-        newsFeed1.addPhotoPost(photoPost);
-        newsFeed1.show();
+        assertTrue("author is missing",feed.contains("Känguru"));
+        assertTrue("message is missing",feed.contains("halt mal"));
     }
+
+    @Test
+    public void testPhoto()
+    {
+        assertTrue("author is missing",feed.contains("Känguru"));
+        assertTrue("file is missing",feed.contains("pfote.jpg"));
+        assertTrue("caption is missing",feed.contains("Die Pfote"));
+    }
+
+    @Test 
+    public void testMessageLikes(){
+        assertTrue("message likes are not shown",feed.contains("2 people like this."));
+    }
+
+    @Test 
+    public void testPhotoLikes(){
+        assertTrue("photo likes are not shown",feed.contains("1 people like this."));
+    }
+
+    @Test 
+    public void testPhotoComments(){
+        assertTrue("photo comments are not shown",feed.contains("2 comment(s). Click here to view."));
+    }
+
+    @Test 
+    public void testMessageComments(){
+        assertTrue("message comments are not shown",feed.contains("1 comment(s). Click here to view."));
+    }
+
 }
 

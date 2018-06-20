@@ -46,23 +46,18 @@ public class NewsFeed
     {
         photos.add(photo);
     }
-
+    public String getFeed(){
+        StringBuilder b = new StringBuilder();
+        messages.forEach(m -> b.append(m.display()).append("\n"));
+        photos.forEach(m -> b.append(m.display()).append("\n"));
+        return b.toString();
+    }
     /**
      * Show the news feed. Currently: print the news feed details to the
      * terminal. (To do: replace this later with display in web browser.)
      */
     public void show()
     {
-        // display all text posts
-        for(MessagePost message : messages) {
-            message.display();
-            System.out.println();   // empty line between posts
-        }
-
-        // display all photos
-        for(PhotoPost photo : photos) {
-            photo.display();
-            System.out.println();   // empty line between posts
-        }
+        System.out.println(getFeed());
     }
 }
