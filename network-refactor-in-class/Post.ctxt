@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Post
+comment0.text=\n\n
+comment1.params=username
+comment1.target=Post(java.lang.String)
+comment2.params=text
+comment2.target=void\ addComment(java.lang.String)
+comment2.text=\n\ Add\ a\ comment\ to\ this\ post.\n\ \n\ @param\ text\ \ The\ new\ comment\ to\ add.\n
+comment3.params=
+comment3.target=java.lang.String\ displayUsername()
+comment4.params=
+comment4.target=java.lang.String\ displayComments()
+numComments=5
