@@ -46,7 +46,6 @@ public class MessagePost extends Post
         }
     }
 
-    
 
     /**
      * Return the text of this post.
@@ -77,12 +76,12 @@ public class MessagePost extends Post
     public String display()
     {
         String result = "";
-        
+
         result += displayUsername();
-        
+
         result += message;
         result += "\n";
-        
+
         result += timeString(timestamp);
 
         if(likes > 0) {
@@ -92,15 +91,8 @@ public class MessagePost extends Post
         else {
             result += "\n";
         }
+        result += displayComments();
 
-        if(comments.isEmpty()) {
-            result += "   No comments.";
-            result += "\n";
-        }
-        else {
-            result += "   " + comments.size() + " comment(s). Click here to view.";
-            result += "\n";
-        }
         return result;
     }
 

@@ -105,14 +105,7 @@ public class PhotoPost extends Post
             result += "\n";
         }
 
-        if(comments.isEmpty()) {
-            result += "   No comments.";
-            result += "\n";
-        }
-        else {
-            result += "   " + comments.size() + " comment(s). Click here to view.";
-            result += "\n";
-        }
+      result += displayComments();
         return result;
     }
 

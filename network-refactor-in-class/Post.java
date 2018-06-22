@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Post
 {
     private String username;  // username of the post's author
-  
-    ArrayList<String> comments;
+
+    private ArrayList<String> comments;
 
     public Post(String username){
         this.username = username;
@@ -25,5 +25,19 @@ public class Post
 
     public String displayUsername(){
         return username + "\n";
+    }
+
+    public String displayComments(){
+        String result = "";
+        if(comments.isEmpty()) {
+            result += "   No comments.";
+            result += "\n";
+        }
+        else {
+            result += "   " + comments.size() + " comment(s). Click here to view.";
+            result += "\n";
+        }
+
+        return result;
     }
 }
