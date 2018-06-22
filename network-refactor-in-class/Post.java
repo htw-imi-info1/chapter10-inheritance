@@ -4,9 +4,12 @@ import java.util.ArrayList;
  */
 public class Post
 {
+    private String username;  // username of the post's author
+  
     ArrayList<String> comments;
 
-    public Post(){
+    public Post(String username){
+        this.username = username;
         comments = new ArrayList<>();
     }
 
@@ -18,5 +21,9 @@ public class Post
     public void addComment(String text)
     {
         comments.add(text);
+    }
+
+    public String displayUsername(){
+        return username + "\n";
     }
 }

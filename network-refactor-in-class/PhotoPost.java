@@ -10,7 +10,6 @@ import java.util.ArrayList;
  */
 public class PhotoPost extends Post
 {
-    private String username;  // username of the post's author
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
     private long timestamp;
@@ -23,9 +22,9 @@ public class PhotoPost extends Post
      * @param filename  The filename of the image in this post.
      * @param caption   A caption for the image.
      */
-    public PhotoPost(String author, String filename, String caption)
+    public PhotoPost(String username, String filename, String caption)
     {
-        username = author;
+        super(username);
         this.filename = filename;
         this.caption = caption;
         timestamp = System.currentTimeMillis();
@@ -91,8 +90,7 @@ public class PhotoPost extends Post
     {
 
         String result = "";
-        result += username;
-        result += "\n";
+        result += displayUsername();
         result += "  [" + filename + "]";
         result += "\n";
         result += "  " + caption;
