@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=InheritanceAndConstructors
+comment1.params=
+comment1.target=InheritanceAndConstructors()
+comment1.text=\n\ Default\ constructor\ for\ test\ class\ CTest\n
+comment2.params=
+comment2.target=void\ testConstructorInA()
+comment3.params=
+comment3.target=void\ testConstructorInC1()
+comment4.params=
+comment4.target=void\ testConstructorInC2()
+numComments=5

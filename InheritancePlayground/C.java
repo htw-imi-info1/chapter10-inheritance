@@ -1,6 +1,9 @@
 
 public class C extends A
 {
+    public C(){
+       theField = "Constructor in C";
+    }
     public String getName(){
         return "getName in C";
     }
