@@ -8,14 +8,13 @@ import java.util.ArrayList;
  * @author Michael Kölling and David J. Barnes
  * @version 0.1
  */
-public class PhotoPost 
+public class PhotoPost extends Post
 {
     private String username;  // username of the post's author
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
     private long timestamp;
     private int likes;
-    private ArrayList<String> comments;
 
     /**
      * Constructor for objects of class PhotoPost.
@@ -31,7 +30,6 @@ public class PhotoPost
         this.caption = caption;
         timestamp = System.currentTimeMillis();
         likes = 0;
-        comments = new ArrayList<>();
     }
 
     /**
@@ -52,15 +50,6 @@ public class PhotoPost
         }
     }
 
-    /**
-     * Add a comment to this post.
-     * 
-     * @param text  The new comment to add.
-     */
-    public void addComment(String text)
-    {
-        comments.add(text);
-    }
 
     /**
      * Return the file name of the image in this post.

@@ -33,11 +33,13 @@ public class NewsFeedTest
     public void setUp()
     {
         newsFeed1 = new NewsFeed();
+        
         messagePost = new MessagePost("Känguru", "halt mal");
         messagePost.like();
         messagePost.like();
         messagePost.addComment("message comment 1");
         newsFeed1.addMessagePost(messagePost);
+       
         photoPost = new PhotoPost("Känguru", "pfote.jpg", "Die Pfote");
         photoPost.like();
         photoPost.addComment("photo comment 1");

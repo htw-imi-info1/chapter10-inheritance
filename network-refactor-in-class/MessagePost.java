@@ -8,13 +8,12 @@ import java.util.ArrayList;
  * @author Michael Kölling and David J. Barnes
  * @version 0.1
  */
-public class MessagePost 
+public class MessagePost extends Post
 {
     private String username;  // username of the post's author
     private String message;   // an arbitrarily long, multi-line message
     private long timestamp;
     private int likes;
-    private ArrayList<String> comments;
 
     /**
      * Constructor for objects of class MessagePost.
@@ -28,7 +27,6 @@ public class MessagePost
         message = text;
         timestamp = System.currentTimeMillis();
         likes = 0;
-        comments = new ArrayList<>();
     }
 
     /**
@@ -49,15 +47,7 @@ public class MessagePost
         }
     }
 
-    /**
-     * Add a comment to this post.
-     * 
-     * @param text  The new comment to add.
-     */
-    public void addComment(String text)
-    {
-        comments.add(text);
-    }
+    
 
     /**
      * Return the text of this post.
