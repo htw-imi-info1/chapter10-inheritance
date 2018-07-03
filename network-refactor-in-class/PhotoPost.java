@@ -12,8 +12,7 @@ public class PhotoPost extends Post
 {
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
-    private long timestamp;
-    private int likes;
+ 
 
     /**
      * Constructor for objects of class PhotoPost.
@@ -27,27 +26,8 @@ public class PhotoPost extends Post
         super(username);
         this.filename = filename;
         this.caption = caption;
-        timestamp = System.currentTimeMillis();
-        likes = 0;
     }
 
-    /**
-     * Record one more 'Like' indication from a user.
-     */
-    public void like()
-    {
-        likes++;
-    }
-
-    /**
-     * Record that a user has withdrawn his/her 'Like' vote.
-     */
-    public void unlike()
-    {
-        if (likes > 0) {
-            likes--;
-        }
-    }
 
 
     /**
@@ -70,16 +50,7 @@ public class PhotoPost extends Post
         return caption;
     }
 
-    /**
-     * Return the time of creation of this post.
-     * 
-     * @return The post's creation time, as a system time value.
-     */
-    public long getTimeStamp()
-    {
-        return timestamp;
-    }
-
+ 
     /**
      * Display the details of this post.
      * 
@@ -96,14 +67,8 @@ public class PhotoPost extends Post
         result += "  " + caption;
         result += "\n";
 
-        result += timeString(timestamp);
-        if(likes > 0) {
-            result += "  -  " + likes + " people like this.";
-            result += "\n";
-        }
-        else {
-            result += "\n";
-        }
+        result += timeString(getTimeStamp());
+        result += displayLikes();
 
       result += displayComments();
         return result;
@@ -118,17 +83,4 @@ public class PhotoPost extends Post
      * @return      A relative time string for the given time
      */
 
-    private String timeString(long time)
-    {
-        long current = System.currentTimeMillis();
-        long pastMillis = current - time;      // time passed in milliseconds
-        long seconds = pastMillis/1000;
-        long minutes = seconds/60;
-        if(minutes > 0) {
-            return minutes + " minutes ago";
-        }
-        else {
-            return seconds + " seconds ago";
-        }
-    }
 }
