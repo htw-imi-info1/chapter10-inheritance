@@ -54,10 +54,10 @@ public class PhotoPost extends Post
      * (Currently: Print to the text terminal. This is simulating display 
      * in a web browser for now.)
      */
-    public String display()
+    public String displaySpecificStuff()
     {
 
-        String result = super.display();
+        String result = "";
 
         // do photo specific stuff
         result += "  [" + filename + "]";

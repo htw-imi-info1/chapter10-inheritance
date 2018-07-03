@@ -101,17 +101,22 @@ public class Post
         result += "\n";
         return result;
     }
+
     public String display()
     {
 
         String result = "";
         result += displayUsername();
 
-        // do photo specific stuff
-        
+        result += displaySpecificStuff();
+
         result += timeString(getTimeStamp());
         result += displayLikes();
         result += displayComments();
         return result;
+    }
+
+    public String displaySpecificStuff(){
+        return "";
     }
 }
