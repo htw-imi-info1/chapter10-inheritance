@@ -45,17 +45,11 @@ public class MessagePost extends Post
      */
     public String display()
     {
-        String result = "";
-
-        result += displayUsername();
-
+        String result = super.display();
+        
+        // do message specific stuff
         result += message;
         result += "\n";
-
-        result += timeString(getTimeStamp());
-
-        result += displayLikes();
-        result += displayComments();
 
         return result;
     }

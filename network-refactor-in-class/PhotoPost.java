@@ -12,7 +12,6 @@ public class PhotoPost extends Post
 {
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
- 
 
     /**
      * Constructor for objects of class PhotoPost.
@@ -27,7 +26,6 @@ public class PhotoPost extends Post
         this.filename = filename;
         this.caption = caption;
     }
-
 
 
     /**
@@ -50,7 +48,6 @@ public class PhotoPost extends Post
         return caption;
     }
 
- 
     /**
      * Display the details of this post.
      * 
@@ -60,17 +57,14 @@ public class PhotoPost extends Post
     public String display()
     {
 
-        String result = "";
-        result += displayUsername();
+        String result = super.display();
+
+        // do photo specific stuff
         result += "  [" + filename + "]";
         result += "\n";
         result += "  " + caption;
         result += "\n";
 
-        result += timeString(getTimeStamp());
-        result += displayLikes();
-
-      result += displayComments();
         return result;
     }
 
