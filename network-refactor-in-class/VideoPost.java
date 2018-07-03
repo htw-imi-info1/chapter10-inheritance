@@ -1,10 +1,12 @@
 
 public class VideoPost extends Post
 {
-    public VideoPost(){
-        super();
+    String videoFile;
+    public VideoPost(String username, String videoFile){
+        super(username);
+        this.videoFile = videoFile;
     }
     public String displaySpecificStuff(){
-        return "video would be shown here";
+        return "videoFile: "+videoFile+"\n";
     }
 }
