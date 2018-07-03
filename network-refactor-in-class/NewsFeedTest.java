@@ -33,22 +33,27 @@ public class NewsFeedTest
     public void setUp()
     {
         newsFeed1 = new NewsFeed();
-        
+
         messagePost = new MessagePost("Känguru", "halt mal");
         messagePost.like();
         messagePost.like();
         messagePost.addComment("message comment 1");
-        newsFeed1.addMessagePost(messagePost);
-       
+        newsFeed1.addPost(messagePost);
+
         photoPost = new PhotoPost("Känguru", "pfote.jpg", "Die Pfote");
         photoPost.like();
         photoPost.addComment("photo comment 1");
         photoPost.addComment("photo comment 2");
-        newsFeed1.addPhotoPost(photoPost);
+        newsFeed1.addPost(photoPost);
+
+        VideoPost videoPost = new VideoPost("Marc-Uwe", "film.mp4");
+        videoPost.like();
+        videoPost.like();
+        videoPost.like();
+        newsFeed1.addPost(videoPost);
+
         feed = newsFeed1.getFeed();
-
     }
-
     @Test
     public void testMessage()
     {

@@ -15,41 +15,24 @@ import java.util.ArrayList;
  */
 public class NewsFeed
 {
-    private ArrayList<MessagePost> messages;
-    private ArrayList<PhotoPost> photos;
+    private ArrayList<Post> posts;
 
     /**
      * Construct an empty news feed.
      */
     public NewsFeed()
     {
-        messages = new ArrayList<>();
-        photos = new ArrayList<>();
+        posts = new ArrayList<>();
     }
 
-    /**
-     * Add a text post to the news feed.
-     * 
-     * @param text  The text post to be added.
-     */
-    public void addMessagePost(MessagePost message)
-    {
-        messages.add(message);
-    }
-
-    /**
-     * Add a photo post to the news feed.
-     * 
-     * @param photo  The photo post to be added.
-     */
-    public void addPhotoPost(PhotoPost photo)
-    {
-        photos.add(photo);
-    }
+   
+    public void addPost(Post post){
+    posts.add(post);
+}
+   
     public String getFeed(){
         StringBuilder b = new StringBuilder();
-        messages.forEach(m -> b.append(m.display()).append("\n"));
-        photos.forEach(m -> b.append(m.display()).append("\n"));
+        posts.forEach(m -> b.append(m.display()).append("\n"));
         return b.toString();
     }
     /**
