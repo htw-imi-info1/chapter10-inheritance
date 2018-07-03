@@ -2,7 +2,7 @@ import java.util.ArrayList;
 /**
 
  */
-public class Post
+public abstract class Post
 {
     private String username;  // username of the post's author
     private long timestamp;
@@ -116,7 +116,5 @@ public class Post
         return result;
     }
 
-    public String displaySpecificStuff(){
-        return "";
-    }
+    public abstract String displaySpecificStuff();
 }
