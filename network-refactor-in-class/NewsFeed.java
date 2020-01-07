@@ -15,16 +15,14 @@ import java.util.ArrayList;
  */
 public class NewsFeed
 {
-    private ArrayList<MessagePost> messages;
-    private ArrayList<PhotoPost> photos;
+    private ArrayList<Post> posts;
 
     /**
      * Construct an empty news feed.
      */
     public NewsFeed()
     {
-        messages = new ArrayList<>();
-        photos = new ArrayList<>();
+        posts = new ArrayList<>();
     }
 
     /**
@@ -34,7 +32,7 @@ public class NewsFeed
      */
     public void addMessagePost(MessagePost message)
     {
-        messages.add(message);
+        add(message);
     }
 
     /**
@@ -44,14 +42,27 @@ public class NewsFeed
      */
     public void addPhotoPost(PhotoPost photo)
     {
-        photos.add(photo);
+        add(photo);
     }
+
+    public void add(Post post){
+        posts.add(post);
+    }
+
     public String getFeed(){
         StringBuilder b = new StringBuilder();
-        messages.forEach(m -> b.append(m.display()).append("\n"));
-        photos.forEach(m -> b.append(m.display()).append("\n"));
+        posts.forEach(m -> b.append(m.display()).append("\n"));
         return b.toString();
     }
+
+    public String getFeedLoop(){
+        String result = "";
+        for(Post post : posts){
+            result += post.display();
+        }   
+        return result;
+    }
+
     /**
      * Show the news feed. Currently: print the news feed details to the
      * terminal. (To do: replace this later with display in web browser.)
