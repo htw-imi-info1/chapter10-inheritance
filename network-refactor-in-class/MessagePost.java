@@ -8,11 +8,11 @@ import java.util.ArrayList;
  * @author Michael Kölling and David J. Barnes
  * @version 0.1
  */
-public class MessagePost 
+public class MessagePost extends Post 
 {
     private String username;  // username of the post's author
     private String message;   // an arbitrarily long, multi-line message
-    private long timestamp;
+    
     private int likes;
     private ArrayList<String> comments;
 
@@ -24,9 +24,9 @@ public class MessagePost
      */
     public MessagePost(String author, String text)
     {
+        super();
         username = author;
         message = text;
-        timestamp = System.currentTimeMillis();
         likes = 0;
         comments = new ArrayList<>();
     }
@@ -69,15 +69,6 @@ public class MessagePost
         return message;
     }
 
-    /**
-     * Return the time of creation of this post.
-     * 
-     * @return The post's creation time, as a system time value.
-     */
-    public long getTimeStamp()
-    {
-        return timestamp;
-    }
 
     /**
      * Display the details of this post.
@@ -92,7 +83,7 @@ public class MessagePost
         result += "\n";
         result += message;
         result += "\n";
-        result += timeString(timestamp);
+        result += timeString();
 
         if(likes > 0) {
             result += "  -  " + likes + " people like this.";

@@ -48,6 +48,11 @@ public class NewsFeedTest
     }
 
     @Test
+    public void show(){
+        newsFeed1.show();
+    }
+
+    @Test
     public void testMessage()
     {
         assertTrue("author is missing",feed.contains("Känguru"));
