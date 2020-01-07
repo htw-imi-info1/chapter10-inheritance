@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Post
+public abstract class Post
 {
     private String username;  // username of the post's author
 
@@ -127,8 +127,6 @@ public class Post
 
         return result;
     }
-    public String displayContent(){
-        return "";
-    }
+    public abstract String displayContent();
 
 }
