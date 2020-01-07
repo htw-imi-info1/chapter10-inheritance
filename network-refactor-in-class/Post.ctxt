@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Post
+comment1.params=
+comment1.target=Post()
+comment2.params=
+comment2.target=long\ getTimeStamp()
+comment2.text=\n\ Return\ the\ time\ of\ creation\ of\ this\ post.\n\ \n\ @return\ The\ post's\ creation\ time,\ as\ a\ system\ time\ value.\n
+comment3.params=
+comment3.target=java.lang.String\ timeString()
+comment4.params=time
+comment4.target=java.lang.String\ timeString(long)
+comment4.text=\n\ Create\ a\ string\ describing\ a\ time\ point\ in\ the\ past\ in\ terms\ \n\ relative\ to\ current\ time,\ such\ as\ "30\ seconds\ ago"\ or\ "7\ minutes\ ago".\n\ Currently,\ only\ seconds\ and\ minutes\ are\ used\ for\ the\ string.\n\ \n\ @param\ time\ \ The\ time\ value\ to\ convert\ (in\ system\ milliseconds)\n\ @return\ \ \ \ \ \ A\ relative\ time\ string\ for\ the\ given\ time\n
+numComments=5
