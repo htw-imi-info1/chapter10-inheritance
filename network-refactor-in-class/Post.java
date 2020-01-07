@@ -1,15 +1,17 @@
-
+import java.util.ArrayList;
 public class Post
 {
     private String username;  // username of the post's author
 
     private long timestamp;
     private int likes;
+    private ArrayList<String> comments;
 
     public Post(String author){
         timestamp = System.currentTimeMillis();
         username = author;
         likes = 0;
+        comments = new ArrayList<>();
     }
 
     /**
@@ -54,7 +56,6 @@ public class Post
         result += username;
         result += "\n";
 
-        
         return result;
     }
 
@@ -65,6 +66,19 @@ public class Post
             result += "\n";
         }
         else {
+            result += "\n";
+        }
+        return result;
+    }
+
+    public String displayComments(){
+        String result = "";
+        if(comments.isEmpty()) {
+            result += "   No comments.";
+            result += "\n";
+        }
+        else {
+            result += "   " + comments.size() + " comment(s). Click here to view.";
             result += "\n";
         }
         return result;
@@ -87,4 +101,14 @@ public class Post
             likes--;
         }
     }
+     /**
+     * Add a comment to this post.
+     * 
+     * @param text  The new comment to add.
+     */
+    public void addComment(String text)
+    {
+        comments.add(text);
+    }
+
 }

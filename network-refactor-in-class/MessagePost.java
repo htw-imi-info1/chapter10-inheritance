@@ -10,10 +10,7 @@ import java.util.ArrayList;
  */
 public class MessagePost extends Post 
 {
-     private String message;   // an arbitrarily long, multi-line message
-    
-  
-    private ArrayList<String> comments;
+    private String message;   // an arbitrarily long, multi-line message
 
     /**
      * Constructor for objects of class MessagePost.
@@ -25,22 +22,9 @@ public class MessagePost extends Post
     {
         super(author);
         message = text;
-       
-        comments = new ArrayList<>();
     }
 
-  
-
-    /**
-     * Add a comment to this post.
-     * 
-     * @param text  The new comment to add.
-     */
-    public void addComment(String text)
-    {
-        comments.add(text);
-    }
-
+   
     /**
      * Return the text of this post.
      * 
@@ -51,7 +35,6 @@ public class MessagePost extends Post
         return message;
     }
 
-
     /**
      * Display the details of this post.
      * 
@@ -61,20 +44,12 @@ public class MessagePost extends Post
     public String display()
     {
         String result = super.display();
- 
-        
-        result += timeString();
-       result += displayLikes();
 
-        if(comments.isEmpty()) {
-            result += "   No comments.";
-            result += "\n";
-        }
-        else {
-            result += "   " + comments.size() + " comment(s). Click here to view.";
-            result += "\n";
-        }
-        
+        result += timeString();
+        result += displayLikes();
+
+        result += displayComments();
+
         result += message;
         result += "\n";
         return result;

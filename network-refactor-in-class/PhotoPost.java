@@ -13,7 +13,6 @@ public class PhotoPost extends Post
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
 
-    private ArrayList<String> comments;
 
     /**
      * Constructor for objects of class PhotoPost.
@@ -27,21 +26,10 @@ public class PhotoPost extends Post
         super(author);
         this.filename = filename;
         this.caption = caption;
-      
-        comments = new ArrayList<>();
+
     }
 
- 
 
-    /**
-     * Add a comment to this post.
-     * 
-     * @param text  The new comment to add.
-     */
-    public void addComment(String text)
-    {
-        comments.add(text);
-    }
 
     /**
      * Return the file name of the image in this post.
@@ -80,16 +68,9 @@ public class PhotoPost extends Post
         result += "\n";
 
         result += timeString();
-     result += displayLikes();
+        result += displayLikes();
 
-        if(comments.isEmpty()) {
-            result += "   No comments.";
-            result += "\n";
-        }
-        else {
-            result += "   " + comments.size() + " comment(s). Click here to view.";
-            result += "\n";
-        }
+        result += displayComments();
         return result;
     }
 
