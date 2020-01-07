@@ -4,10 +4,12 @@ public class Post
     private String username;  // username of the post's author
 
     private long timestamp;
-    
+    private int likes;
+
     public Post(String author){
         timestamp = System.currentTimeMillis();
-         username = author;
+        username = author;
+        likes = 0;
     }
 
     /**
@@ -51,6 +53,38 @@ public class Post
         String result = "";
         result += username;
         result += "\n";
+
+        
         return result;
+    }
+
+    public String displayLikes(){
+        String result = "";
+        if(likes > 0) {
+            result += "  -  " + likes + " people like this.";
+            result += "\n";
+        }
+        else {
+            result += "\n";
+        }
+        return result;
+    }
+
+    /**
+     * Record one more 'Like' indication from a user.
+     */
+    public void like()
+    {
+        likes++;
+    }
+
+    /**
+     * Record that a user has withdrawn his/her 'Like' vote.
+     */
+    public void unlike()
+    {
+        if (likes > 0) {
+            likes--;
+        }
     }
 }

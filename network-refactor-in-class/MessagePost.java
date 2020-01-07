@@ -12,7 +12,7 @@ public class MessagePost extends Post
 {
      private String message;   // an arbitrarily long, multi-line message
     
-    private int likes;
+  
     private ArrayList<String> comments;
 
     /**
@@ -25,27 +25,11 @@ public class MessagePost extends Post
     {
         super(author);
         message = text;
-        likes = 0;
+       
         comments = new ArrayList<>();
     }
 
-    /**
-     * Record one more 'Like' indication from a user.
-     */
-    public void like()
-    {
-        likes++;
-    }
-
-    /**
-     * Record that a user has withdrawn his/her 'Like' vote.
-     */
-    public void unlike()
-    {
-        if (likes > 0) {
-            likes--;
-        }
-    }
+  
 
     /**
      * Add a comment to this post.
@@ -80,14 +64,7 @@ public class MessagePost extends Post
  
         
         result += timeString();
-
-        if(likes > 0) {
-            result += "  -  " + likes + " people like this.";
-            result += "\n";
-        }
-        else {
-            result += "\n";
-        }
+       result += displayLikes();
 
         if(comments.isEmpty()) {
             result += "   No comments.";

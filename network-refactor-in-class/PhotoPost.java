@@ -13,7 +13,6 @@ public class PhotoPost extends Post
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
 
-    private int likes;
     private ArrayList<String> comments;
 
     /**
@@ -28,27 +27,11 @@ public class PhotoPost extends Post
         super(author);
         this.filename = filename;
         this.caption = caption;
-        likes = 0;
+      
         comments = new ArrayList<>();
     }
 
-    /**
-     * Record one more 'Like' indication from a user.
-     */
-    public void like()
-    {
-        likes++;
-    }
-
-    /**
-     * Record that a user has withdrawn his/her 'Like' vote.
-     */
-    public void unlike()
-    {
-        if (likes > 0) {
-            likes--;
-        }
-    }
+ 
 
     /**
      * Add a comment to this post.
@@ -97,13 +80,7 @@ public class PhotoPost extends Post
         result += "\n";
 
         result += timeString();
-        if(likes > 0) {
-            result += "  -  " + likes + " people like this.";
-            result += "\n";
-        }
-        else {
-            result += "\n";
-        }
+     result += displayLikes();
 
         if(comments.isEmpty()) {
             result += "   No comments.";
