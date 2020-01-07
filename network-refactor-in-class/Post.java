@@ -50,7 +50,7 @@ public class Post
         }
     }
 
-    public String display()
+    public String displayUsername()
     {
         String result = "";
         result += username;

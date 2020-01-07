@@ -60,7 +60,7 @@ public class PhotoPost extends Post
     public String display()
     {
 
-        String result = super.display();
+        String result = super.displayUsername();
 
         result += "  [" + filename + "]";
         result += "\n";

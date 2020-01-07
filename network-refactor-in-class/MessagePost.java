@@ -24,7 +24,6 @@ public class MessagePost extends Post
         message = text;
     }
 
-   
     /**
      * Return the text of this post.
      * 
@@ -43,7 +42,7 @@ public class MessagePost extends Post
      */
     public String display()
     {
-        String result = super.display();
+        String result = super.displayUsername();
 
         result += timeString();
         result += displayLikes();
