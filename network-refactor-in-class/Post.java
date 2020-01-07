@@ -110,5 +110,25 @@ public class Post
     {
         comments.add(text);
     }
+    
+        /**
+     * Display the details of this post.
+     * 
+     * (Currently: Print to the text terminal. This is simulating display 
+     * in a web browser for now.)
+     */
+    public String display()
+    {
+        String result = displayUsername();
+        result += displayContent();
+        result += timeString();
+        result += displayLikes();
+        result += displayComments();
+
+        return result;
+    }
+    public String displayContent(){
+        return "";
+    }
 
 }

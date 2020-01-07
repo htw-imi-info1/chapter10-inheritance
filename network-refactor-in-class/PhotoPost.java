@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 /**
- * This class stores information about a post in a social network. 
- * The main part of the post consists of a photo and a caption. 
+ * This class stores information about a post in a social network.
+ * The main part of the post consists of a photo and a caption.
  * Other data, such as author and time, are also stored.
- * 
+ *
  * @author Michael Kölling and David J. Barnes
  * @version 0.1
  */
@@ -16,7 +16,7 @@ public class PhotoPost extends Post
 
     /**
      * Constructor for objects of class PhotoPost.
-     * 
+     *
      * @param author    The username of the author of this post.
      * @param filename  The filename of the image in this post.
      * @param caption   A caption for the image.
@@ -33,7 +33,7 @@ public class PhotoPost extends Post
 
     /**
      * Return the file name of the image in this post.
-     * 
+     *
      * @return The post's image file name.
      */
     public String getImageFile()
@@ -43,7 +43,7 @@ public class PhotoPost extends Post
 
     /**
      * Return the caption of the image of this post.
-     * 
+     *
      * @return The image's caption.
      */
     public String getCaption()
@@ -51,26 +51,13 @@ public class PhotoPost extends Post
         return caption;
     }
 
-    /**
-     * Display the details of this post.
-     * 
-     * (Currently: Print to the text terminal. This is simulating display 
-     * in a web browser for now.)
-     */
-    public String display()
+    public String displayContent()
     {
 
-        String result = super.displayUsername();
-
-        result += "  [" + filename + "]";
+        String result =  "  [" + filename + "]";
         result += "\n";
         result += "  " + caption;
         result += "\n";
-
-        result += timeString();
-        result += displayLikes();
-
-        result += displayComments();
         return result;
     }
 
