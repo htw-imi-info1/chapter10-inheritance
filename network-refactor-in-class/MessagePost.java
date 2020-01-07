@@ -10,8 +10,7 @@ import java.util.ArrayList;
  */
 public class MessagePost extends Post 
 {
-    private String username;  // username of the post's author
-    private String message;   // an arbitrarily long, multi-line message
+     private String message;   // an arbitrarily long, multi-line message
     
     private int likes;
     private ArrayList<String> comments;
@@ -24,8 +23,7 @@ public class MessagePost extends Post
      */
     public MessagePost(String author, String text)
     {
-        super();
-        username = author;
+        super(author);
         message = text;
         likes = 0;
         comments = new ArrayList<>();
@@ -78,11 +76,9 @@ public class MessagePost extends Post
      */
     public String display()
     {
-        String result = "";
-        result += username;
-        result += "\n";
-        result += message;
-        result += "\n";
+        String result = super.display();
+ 
+        
         result += timeString();
 
         if(likes > 0) {
@@ -101,6 +97,9 @@ public class MessagePost extends Post
             result += "   " + comments.size() + " comment(s). Click here to view.";
             result += "\n";
         }
+        
+        result += message;
+        result += "\n";
         return result;
     }
 

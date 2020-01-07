@@ -1,9 +1,13 @@
 
 public class Post
 {
+    private String username;  // username of the post's author
+
     private long timestamp;
-    public Post(){
+    
+    public Post(String author){
         timestamp = System.currentTimeMillis();
+         username = author;
     }
 
     /**
@@ -40,5 +44,13 @@ public class Post
         else {
             return seconds + " seconds ago";
         }
+    }
+
+    public String display()
+    {
+        String result = "";
+        result += username;
+        result += "\n";
+        return result;
     }
 }

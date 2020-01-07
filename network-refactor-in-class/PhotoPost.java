@@ -10,7 +10,6 @@ import java.util.ArrayList;
  */
 public class PhotoPost extends Post
 {
-    private String username;  // username of the post's author
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
 
@@ -26,7 +25,7 @@ public class PhotoPost extends Post
      */
     public PhotoPost(String author, String filename, String caption)
     {
-        username = author;
+        super(author);
         this.filename = filename;
         this.caption = caption;
         likes = 0;
@@ -81,8 +80,6 @@ public class PhotoPost extends Post
         return caption;
     }
 
- 
-
     /**
      * Display the details of this post.
      * 
@@ -92,9 +89,8 @@ public class PhotoPost extends Post
     public String display()
     {
 
-        String result = "";
-        result += username;
-        result += "\n";
+        String result = super.display();
+
         result += "  [" + filename + "]";
         result += "\n";
         result += "  " + caption;
@@ -120,7 +116,4 @@ public class PhotoPost extends Post
         return result;
     }
 
-
-
-   
 }
