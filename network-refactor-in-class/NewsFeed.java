@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class NewsFeed
 {
-    private ArrayList<Post> posts;
+    private ArrayList<Displayable> posts;
 
     /**
      * Construct an empty news feed.
@@ -45,7 +45,7 @@ public class NewsFeed
         add(photo);
     }
 
-    public void add(Post post){
+    public void add(Displayable post){
         posts.add(post);
     }
 
@@ -57,7 +57,7 @@ public class NewsFeed
 
     public String getFeedLoop(){
         String result = "";
-        for(Post post : posts){
+        for(Displayable post : posts){
             result += post.display();
         }   
         return result;

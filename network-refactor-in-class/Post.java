@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public abstract class Post
+public abstract class Post implements Displayable
 {
     private String username;  // username of the post's author
 
