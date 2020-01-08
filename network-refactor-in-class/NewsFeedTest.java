@@ -37,12 +37,12 @@ public class NewsFeedTest
         messagePost.like();
         messagePost.like();
         messagePost.addComment("message comment 1");
-        newsFeed1.addMessagePost(messagePost);
+        newsFeed1.add(messagePost);
         photoPost = new PhotoPost("Känguru", "pfote.jpg", "Die Pfote");
         photoPost.like();
         photoPost.addComment("photo comment 1");
         photoPost.addComment("photo comment 2");
-        newsFeed1.addPhotoPost(photoPost);
+        newsFeed1.add(photoPost);
         feed = newsFeed1.getFeed();
 
     }

@@ -25,26 +25,6 @@ public class NewsFeed
         posts = new ArrayList<>();
     }
 
-    /**
-     * Add a text post to the news feed.
-     * 
-     * @param text  The text post to be added.
-     */
-    public void addMessagePost(MessagePost message)
-    {
-        add(message);
-    }
-
-    /**
-     * Add a photo post to the news feed.
-     * 
-     * @param photo  The photo post to be added.
-     */
-    public void addPhotoPost(PhotoPost photo)
-    {
-        add(photo);
-    }
-
     public void add(Displayable post){
         posts.add(post);
     }
