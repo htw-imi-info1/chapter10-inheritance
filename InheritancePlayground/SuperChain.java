@@ -9,14 +9,14 @@ public class SuperChain
     @Test
     public void testOneSuperCall(){
         C c = new C();
-        assertEquals("AC",c.nameChain());
+        assertEquals("",c.nameChain());
     
     }  
     
     @Test
     public void testTwoSuperCall(){
         A e = new E();
-        assertEquals("ACE",e.nameChain());
+        assertEquals("",e.nameChain());
     
     }  
 }

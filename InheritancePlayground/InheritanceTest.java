@@ -33,28 +33,28 @@ public class InheritanceTest
     public void methodLookup1()
     {
         B b = new B();
-        assertEquals("getName in A", b.getName());
+        assertEquals("getName in ...", b.getName());
     }
 
     @Test
     public void methodLookup2()
     {
         C c = new C();
-        assertEquals("getName in C", c.getName());
+        assertEquals("getName in ...", c.getName());
     }
 
     @Test
     public void methodLookupMoreThanOneStep()
     {
         D d = new D();
-        assertEquals("getName in A", d.getName());
+        assertEquals("getName in ...", d.getName());
     }
     
     @Test
     public void methodLookupMoreThanOneStep2()
     {
         E e = new E();
-        assertEquals("getName in C", e.getName());
+        assertEquals("getName in ...", e.getName());
     }
     
     @Test
@@ -62,39 +62,9 @@ public class InheritanceTest
     {
         A x; // A is the static type
         x = new B(); // B is the dynamic type
-        x = new C(); // C is the dynamic
-        assertEquals("getName in C", x.getName());
+        assertEquals("getName in ...", x.getName());
+        x = new C(); // C is the dynamic type
+        assertEquals("getName in ...", x.getName());
     }
-    /*
-    @Test
-    public void methodLookupMoreThanOneStep()
-    {
-        D d = new D();
-        assertEquals("getName in A", d.getName());
-    }
-    
-    @Test
-    public void methodLookupMoreThanOneStep()
-    {
-        D d = new D();
-        assertEquals("getName in A", d.getName());
-    }
-    
-    @Test
-    public void methodLookupMoreThanOneStep()
-    {
-        D d = new D();
-        assertEquals("getName in A", d.getName());
-    }
-    
-    @Test
-    public void methodLookupMoreThanOneStep()
-    {
-        D d = new D();
-        assertEquals("getName in A", d.getName());
-    }
-    */
-    
-
 }
 
