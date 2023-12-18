@@ -1,14 +1,12 @@
-
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * The test class NewsFeedTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  Barne Kleinen
  */
 public class NewsFeedTest
 {
@@ -29,11 +27,11 @@ public class NewsFeedTest
      *
      * Called before every test case method.
      */
-    @Before
+    @BeforeEach
     public void setUp()
     {
         newsFeed1 = new NewsFeed();
-        messagePost = new MessagePost("Känguru", "halt mal");
+        messagePost = new MessagePost("Känguru", "halt mal kurz");
         messagePost.like();
         messagePost.like();
         messagePost.addComment("message comment 1");
@@ -43,43 +41,43 @@ public class NewsFeedTest
         photoPost.addComment("photo comment 1");
         photoPost.addComment("photo comment 2");
         newsFeed1.addPhotoPost(photoPost);
+        
         feed = newsFeed1.getFeed();
-
     }
 
     @Test
     public void testMessage()
     {
-        assertTrue("author is missing",feed.contains("Känguru"));
-        assertTrue("message is missing",feed.contains("halt mal"));
+        assertTrue(feed.contains("Känguru"),"author is missing");
+        assertTrue(feed.contains("halt mal kurz"),"message is missing");
     }
 
     @Test
     public void testPhoto()
     {
-        assertTrue("author is missing",feed.contains("Känguru"));
-        assertTrue("file is missing",feed.contains("pfote.jpg"));
-        assertTrue("caption is missing",feed.contains("Die Pfote"));
+        assertTrue(feed.contains("Känguru"), "author is missing");
+        assertTrue(feed.contains("pfote.jpg"), "file is missing");
+        assertTrue(feed.contains("Die Pfote"), "caption is missing");
     }
 
     @Test 
     public void testMessageLikes(){
-        assertTrue("message likes are not shown",feed.contains("2 people like this."));
+        assertTrue(feed.contains("2 people like this."), "message likes are not shown");
     }
 
     @Test 
     public void testPhotoLikes(){
-        assertTrue("photo likes are not shown",feed.contains("1 people like this."));
+        assertTrue(feed.contains("1 people like this."), "photo likes are not shown");
     }
 
     @Test 
     public void testPhotoComments(){
-        assertTrue("photo comments are not shown",feed.contains("2 comment(s). Click here to view."));
+        assertTrue(feed.contains("2 comment(s). Click here to view."), "photo comments are not shown");
     }
 
     @Test 
     public void testMessageComments(){
-        assertTrue("message comments are not shown",feed.contains("1 comment(s). Click here to view."));
+        assertTrue(feed.contains("1 comment(s). Click here to view."), "message comments are not shown");
     }
 
 }

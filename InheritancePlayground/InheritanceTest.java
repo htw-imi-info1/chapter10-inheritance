@@ -30,6 +30,13 @@ public class InheritanceTest
     }
 
     @Test
+    public void methodLookupA()
+    {
+        A b = new A();
+        assertEquals("getName in A", b.getName());
+    }
+
+    @Test
     public void methodLookup1()
     {
         B b = new B();
@@ -37,10 +44,17 @@ public class InheritanceTest
     }
 
     @Test
-    public void methodLookup2()
+    public void methodLookupC()
     {
         C c = new C();
         assertEquals("getName in C", c.getName());
+    }
+
+    @Test
+    public void methodLookupD()
+    {
+        D d = new D();
+        assertEquals("getName in A", d.getName());
     }
 
     @Test
@@ -49,14 +63,14 @@ public class InheritanceTest
         D d = new D();
         assertEquals("getName in A", d.getName());
     }
-    
+
     @Test
     public void methodLookupMoreThanOneStep2()
     {
         E e = new E();
         assertEquals("getName in C", e.getName());
     }
-    
+
     @Test
     public void methodLookUpStaticType()
     {
@@ -69,32 +83,30 @@ public class InheritanceTest
     @Test
     public void methodLookupMoreThanOneStep()
     {
-        D d = new D();
-        assertEquals("getName in A", d.getName());
+    D d = new D();
+    assertEquals("getName in A", d.getName());
     }
-    
+
     @Test
     public void methodLookupMoreThanOneStep()
     {
-        D d = new D();
-        assertEquals("getName in A", d.getName());
+    D d = new D();
+    assertEquals("getName in A", d.getName());
     }
-    
+
     @Test
     public void methodLookupMoreThanOneStep()
     {
-        D d = new D();
-        assertEquals("getName in A", d.getName());
+    D d = new D();
+    assertEquals("getName in A", d.getName());
     }
-    
+
     @Test
     public void methodLookupMoreThanOneStep()
     {
-        D d = new D();
-        assertEquals("getName in A", d.getName());
+    D d = new D();
+    assertEquals("getName in A", d.getName());
     }
-    */
-    
+     */
 
 }
-

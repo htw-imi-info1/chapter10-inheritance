@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=NewsFeedTest
-comment0.text=\n\ The\ test\ class\ NewsFeedTest.\n\n\ @author\ \ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ The\ test\ class\ NewsFeedTest.\n\n\ @author\ \ Barne\ Kleinen\n
 comment1.params=
 comment1.target=NewsFeedTest()
 comment1.text=\n\ Default\ constructor\ for\ test\ class\ NewsFeedTest\n

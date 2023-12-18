@@ -93,10 +93,9 @@ public class PhotoPost
     }
 
     /**
-     * Display the details of this post.
+     * Return the details of this post.
      * 
-     * (Currently: Print to the text terminal. This is simulating display 
-     * in a web browser for now.)
+     * 
      */
     public String display()
     {

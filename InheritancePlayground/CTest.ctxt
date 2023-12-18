@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=CTest
+comment0.text=\n\ The\ test\ class\ CTest.\n\n\ @author\ \ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=CTest()
+comment1.text=\n\ Default\ constructor\ for\ test\ class\ CTest\n
+comment2.params=
+comment2.target=void\ testOneSuperCall()
+comment3.params=
+comment3.target=void\ testTwoSuperCall()
+numComments=4
