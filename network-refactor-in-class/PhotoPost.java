@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Michael Kölling and David J. Barnes
  * @version 0.1
  */
-public class PhotoPost 
+public class PhotoPost extends Post 
 {
     private String username;  // username of the post's author
     private String filename;  // the name of the image file
