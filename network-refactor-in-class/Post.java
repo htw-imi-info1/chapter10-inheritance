@@ -6,10 +6,10 @@ public class Post
     private long timestamp;
     private int likes;
     private ArrayList<String> comments;
-    
+
     public Post(String author){
         username = author;
-        
+
         timestamp = System.currentTimeMillis();
         likes = 0;
         comments = new ArrayList<>();
@@ -19,8 +19,36 @@ public class Post
     {
         String result = "";
         result += username;
+        result += "\n";
         return result;
     }
+
+    public String displayPart2(){
+
+        String result = "";
+        result += "\n";
+
+        result += timeString(timestamp);
+
+        if(likes > 0) {
+            result += "  -  " + likes + " people like this.";
+            result += "\n";
+        }
+        else {
+            result += "\n";
+        }
+
+        if(comments.isEmpty()) {
+            result += "   No comments.";
+            result += "\n";
+        }
+        else {
+            result += "   " + comments.size() + " comment(s). Click here to view.";
+            result += "\n";
+        }
+        return result;
+    }
+
     /**
      * Record one more 'Like' indication from a user.
      */
@@ -38,7 +66,7 @@ public class Post
             likes--;
         }
     } 
-    
+
     /**
      * Add a comment to this post.
      * 
@@ -58,7 +86,7 @@ public class Post
     {
         return timestamp;
     }
-    
+
     /**
      * Create a string describing a time point in the past in terms 
      * relative to current time, such as "30 seconds ago" or "7 minutes ago".
@@ -81,4 +109,6 @@ public class Post
             return seconds + " seconds ago";
         }
     }
+ 
+    
 }

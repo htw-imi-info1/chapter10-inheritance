@@ -12,7 +12,7 @@ public class PhotoPost extends Post
 {
     private String filename;  // the name of the image file
     private String caption;   // a one line image caption
-    
+
     /**
      * Constructor for objects of class PhotoPost.
      * 
@@ -25,9 +25,8 @@ public class PhotoPost extends Post
         super(author);
         this.filename = filename;
         this.caption = caption;
-        
-    }
 
+    }
 
     /**
      * Return the file name of the image in this post.
@@ -50,16 +49,6 @@ public class PhotoPost extends Post
     }
 
     /**
-     * Return the time of creation of this post.
-     * 
-     * @return The post's creation time, as a system time value.
-     */
-    public long getTimeStamp()
-    {
-        return timestamp;
-    }
-
-    /**
      * Return the details of this post.
      * 
      * 
@@ -68,29 +57,12 @@ public class PhotoPost extends Post
     {
 
         String result = super.display();
-        result += "\n";
+
         result += "  [" + filename + "]";
         result += "\n";
         result += "  " + caption;
-        result += "\n";
 
-        result += timeString(timestamp);
-        if(likes > 0) {
-            result += "  -  " + likes + " people like this.";
-            result += "\n";
-        }
-        else {
-            result += "\n";
-        }
-
-        if(comments.isEmpty()) {
-            result += "   No comments.";
-            result += "\n";
-        }
-        else {
-            result += "   " + comments.size() + " comment(s). Click here to view.";
-            result += "\n";
-        }
+        result += displayPart2();
         return result;
     }
 

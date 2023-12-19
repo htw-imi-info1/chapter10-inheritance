@@ -46,28 +46,13 @@ public class MessagePost  extends Post
     {
         String result = super.display();
         //result += username;
-        result += "\n";
+        
+        
+        
         result += message;
-        result += "\n";
-        result += timeString(timestamp);
-
-        if(likes > 0) {
-            result += "  -  " + likes + " people like this.";
-            result += "\n";
-        }
-        else {
-            result += "\n";
-        }
-
-        if(comments.isEmpty()) {
-            result += "   No comments.";
-            result += "\n";
-        }
-        else {
-            result += "   " + comments.size() + " comment(s). Click here to view.";
-            result += "\n";
-        }
+        result += displayPart2();
         return result;
+        
     }
 
 }
