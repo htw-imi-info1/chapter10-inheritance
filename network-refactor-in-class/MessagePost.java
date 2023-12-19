@@ -10,7 +10,6 @@ import java.util.ArrayList;
  */
 public class MessagePost  extends Post 
 {
-    private String username;  // username of the post's author
     private String message;   // an arbitrarily long, multi-line message
     private long timestamp;
     private int likes;
@@ -24,7 +23,8 @@ public class MessagePost  extends Post
      */
     public MessagePost(String author, String text)
     {
-        username = author;
+        super(author);
+
         message = text;
         timestamp = System.currentTimeMillis();
         likes = 0;
@@ -87,8 +87,8 @@ public class MessagePost  extends Post
      */
     public String display()
     {
-        String result = "";
-        result += username;
+        String result = super.display();
+        //result += username;
         result += "\n";
         result += message;
         result += "\n";

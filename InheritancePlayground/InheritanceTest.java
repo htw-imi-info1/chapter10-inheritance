@@ -32,8 +32,8 @@ public class InheritanceTest
     @Test
     public void methodLookupA()
     {
-        A b = new A();
-        assertEquals("getName in A", b.getName());
+        A a = new A();
+        assertEquals("getName in A", a.getName());
     }
 
     @Test
@@ -77,6 +77,17 @@ public class InheritanceTest
         A x; // A is the static type
         x = new B(); // B is the dynamic type
         x = new C(); // C is the dynamic
+        assertEquals("getName in C", x.getName());
+    }
+
+    @Test
+    public void methodLookUpStaticType2()
+    {
+        methodLookUpStaticType2_impl(new C()); // C is the dynamic
+
+    }
+
+    public void methodLookUpStaticType2_impl(A x ){
         assertEquals("getName in C", x.getName());
     }
     /*
