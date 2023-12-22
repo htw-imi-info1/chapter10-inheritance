@@ -42,16 +42,10 @@ public class MessagePost  extends Post
      * (Currently: Print to the text terminal. This is simulating display 
      * in a web browser for now.)
      */
-    public String display()
+    public String getContent()
     {
-        String result = super.display();
-        //result += username;
-        
-        
-        
-        result += message;
-        result += displayPart2();
-        return result;
+        return message;
+    
         
     }
 

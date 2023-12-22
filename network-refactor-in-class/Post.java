@@ -15,7 +15,28 @@ public class Post
         comments = new ArrayList<>();
     }
 
+    /**
+     * Return the details of this post.
+     * 
+     * 
+     */
     public String display()
+    {
+
+        String result = displayPart1();
+
+        result += getContent() + "\n";
+
+        result += displayPart2();
+        return result;
+    }
+
+    public String getContent()
+    {
+        return "";
+
+    }
+    public String displayPart1()
     {
         String result = "";
         result += username;
@@ -109,6 +130,5 @@ public class Post
             return seconds + " seconds ago";
         }
     }
- 
-    
+
 }

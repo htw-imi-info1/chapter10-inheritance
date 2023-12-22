@@ -53,16 +53,12 @@ public class PhotoPost extends Post
      * 
      * 
      */
-    public String display()
+    public String getContent()
     {
 
-        String result = super.display();
-
-        result += "  [" + filename + "]";
+        String result = "  [" + filename + "]";
         result += "\n";
         result += "  " + caption;
-
-        result += displayPart2();
         return result;
     }
 
