@@ -11,6 +11,6 @@ comment3.params=
 comment3.target=java.lang.String\ getCaption()
 comment3.text=\n\ Return\ the\ caption\ of\ the\ image\ of\ this\ post.\n\ \n\ @return\ The\ image's\ caption.\n
 comment4.params=
-comment4.target=java.lang.String\ display()
+comment4.target=java.lang.String\ getContent()
 comment4.text=\n\ Return\ the\ details\ of\ this\ post.\n\ \n\ \n
 numComments=5
