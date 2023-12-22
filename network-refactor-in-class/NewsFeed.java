@@ -15,6 +15,7 @@ import java.util.ArrayList;
  */
 public class NewsFeed
 {
+    private ArrayList<Post> posts;
     private ArrayList<MessagePost> messages;
     private ArrayList<PhotoPost> photos;
 
@@ -23,6 +24,7 @@ public class NewsFeed
      */
     public NewsFeed()
     {
+        posts = new ArrayList<>();
         messages = new ArrayList<>();
         photos = new ArrayList<>();
     }
@@ -32,9 +34,23 @@ public class NewsFeed
      * 
      * @param text  The text post to be added.
      */
-    public void addMessagePost(MessagePost message)
+    public void addPost(Post post)
     {
-        messages.add(message);
+        Post x = post;
+        posts.add(post);
+    }
+    
+    
+    /**
+     * Add a text post to the news feed.
+     * 
+     * @param text  The text post to be added.
+     */
+    @Deprecated
+    public void addMessagePost(Post post)
+    {
+        Post x = post;
+        posts.add(post);
     }
 
     /**
@@ -42,14 +58,17 @@ public class NewsFeed
      * 
      * @param photo  The photo post to be added.
      */
+    @Deprecated
     public void addPhotoPost(PhotoPost photo)
     {
-        photos.add(photo);
+        
+         posts.add(photo);
+        //photos.add(photo);
     }
     public String getFeed(){
         StringBuilder b = new StringBuilder();
-        messages.forEach(m -> b.append(m.display()).append("\n"));
-        photos.forEach(m -> b.append(m.display()).append("\n"));
+        posts.forEach(m -> b.append(m.display()).append("\n"));
+       // photos.forEach(m -> b.append(m.display()).append("\n"));
         return b.toString();
     }
     /**
