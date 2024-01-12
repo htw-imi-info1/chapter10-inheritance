@@ -14,6 +14,12 @@ public class NewsFeedTest
     MessagePost messagePost;
     PhotoPost photoPost ;
     String feed ;
+    private EventPost eventPos1;
+
+    
+    
+    
+    
 
     /**
      * Default constructor for test class NewsFeedTest
@@ -42,9 +48,16 @@ public class NewsFeedTest
         photoPost.addComment("photo comment 2");
         newsFeed1.addPhotoPost(photoPost);
         
+        eventPos1 = new EventPost("Trick");
+        newsFeed1.addPost(eventPos1);
+        newsFeed1.show();
         feed = newsFeed1.getFeed();
     }
-
+    @Test
+    public void testEventPostIsInFeed(){
+    assertTrue(feed.contains("the event post"),"event is missing");
+        
+    }
     @Test
     public void testMessage()
     {
