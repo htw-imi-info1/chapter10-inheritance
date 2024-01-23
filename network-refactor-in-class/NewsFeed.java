@@ -53,7 +53,7 @@ public class NewsFeed
      * @param photo  The photo post to be added.
      */
     @Deprecated
-    public void addPhotoPost(PhotoPost post)
+    public void addPhotoPost(Post post)
     {
          addPost(post);
     }

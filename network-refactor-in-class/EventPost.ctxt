@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=EventPost
+comment1.params=author
+comment1.target=EventPost(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ display()
+numComments=3
