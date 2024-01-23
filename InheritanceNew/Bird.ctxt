@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Bird
+comment1.params=
+comment1.target=Bird()
+comment1.text=\ this\ is\ implied\ if\ no\ constructor\ is\ defined\ \n\ \ \ \ public\ Bird(){\n\ \ \ \ super();\n\ \ \ \ }\n
+comment2.params=d
+comment2.target=Bird(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ makeSound()
+numComments=4

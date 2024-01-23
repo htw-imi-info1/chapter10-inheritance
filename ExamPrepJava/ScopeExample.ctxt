@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=ScopeExample
+comment1.params=aParameter
+comment1.target=java.lang.String\ aMethod(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ anotherMethod()
+comment3.params=newValue
+comment3.target=void\ setAField(java.lang.String)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5
